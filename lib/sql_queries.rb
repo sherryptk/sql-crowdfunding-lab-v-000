@@ -31,7 +31,11 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_amount_and_users_name
-"Write your SQL query Here"
+  "SELECT Users.name, sum(Pledges.amount)
+  FROM Users
+  INNER JOIN Pledges
+  ON Users.id = Pledges.user_id
+  GROUP BY Users.name ORDER BY Pledges.amount;"
 end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
